@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stackly IT Solution</title>
+
+<style>
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:#fff;
+    scroll-behavior:smooth;
+}
+
+/* LOADER */
+#loader{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:#020617;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:40px;
+    font-weight:bold;
+    z-index:9999;
+    letter-spacing:3px;
+    animation:fadeOut 3s forwards;
+}
+
+@keyframes fadeOut{
+    0%{opacity:1;}
+    90%{opacity:1;}
+    100%{opacity:0; visibility:hidden;}
+}
+
+/* NAVBAR */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 30px;
+    background:#020617;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav h2{
+    color:#38bdf8;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:20px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#fff;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#38bdf8;
+}
+
+/* BUTTONS */
+.btn{
+    padding:8px 15px;
+    border:none;
+    cursor:pointer;
+    border-radius:5px;
+    margin-left:10px;
+    transition:0.3s;
+}
+
+.login{
+    background:#ef4444;
+    color:#fff;
+}
+
+.signup{
+    background:#38bdf8;
+    color:#000;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+/* SECTIONS */
+section{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(to right,#020617,#0f172a);
+}
+
+.hero h1{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    color:#94a3b8;
+}
+
+/* CARDS */
+.cards{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.card{
+    background:#020617;
+    padding:20px;
+    border-radius:10px;
+    width:250px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    border-radius:10px;
+}
+
+/* TEAM */
+.team img{
+    border-radius:50%;
+    width:100px;
+}
+
+/* CONTACT */
+input, textarea{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border:none;
+    border-radius:5px;
+}
+
+/* 404 PAGE */
+#errorPage{
+    display:none;
+    height:100vh;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background:#020617;
+}
+
+#errorPage h1{
+    font-size:60px;
+    color:#ef4444;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    nav ul{
+        display:none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOADER -->
+<div id="loader">STACKLY</div>
+
+<!-- 404 PAGE -->
+<div id="errorPage">
+    <h1>404</h1>
+    <p>Page Not Found</p>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="mainContent">
+
+<!-- NAVBAR -->
+<nav>
+    <h2>Stackly</h2>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Service</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div>
+        <button class="btn login" onclick="show404()">Login</button>
+        <button class="btn signup">Sign Up</button>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <h1>Stackly IT Solution</h1>
+    <p>Innovative Digital Solutions for Modern Businesses</p>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2>About Us</h2>
+    <p>We provide cutting-edge IT services and solutions to help businesses grow digitally.</p>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+    <h2>Our Services</h2>
+    <div class="cards">
+        <div class="card">
+            <img src="https://source.unsplash.com/300x200/?technology" alt="">
+            <h3>Web Development</h3>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/300x200/?coding" alt="">
+            <h3>Software Development</h3>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/300x200/?cloud" alt="">
+            <h3>Cloud Solutions</h3>
+        </div>
+    </div>
+</section>
+
+<!-- TEAM -->
+<section id="team" class="team">
+    <h2>Our Team</h2>
+    <div class="cards">
+        <div class="card">
+            <img src="https://source.unsplash.com/100x100/?person" alt="">
+            <h3>John</h3>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/100x100/?face" alt="">
+            <h3>Sarah</h3>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2>Contact Us</h2>
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Email">
+    <textarea placeholder="Message"></textarea>
+    <button class="btn signup">Send</button>
+</section>
+
+</div>
+
+<script>
+// SHOW MAIN AFTER LOADER
+setTimeout(()=>{
+    document.getElementById("loader").style.display="none";
+},3000);
+
+// SHOW 404 PAGE
+function show404(){
+    document.getElementById("mainContent").style.display="none";
+    document.getElementById("errorPage").style.display="flex";
+}
+</script>
+
+</body>
+</html>
